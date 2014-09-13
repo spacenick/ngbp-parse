@@ -166,6 +166,10 @@ module.exports = function ( grunt ) {
             expand: true
           }
         ]
+      },
+      compile_index: {
+            src: '<%= build_dir %>/index.html',
+            dest: '<%= compile_dir %>/index.html'
       }
     },
 
@@ -591,7 +595,7 @@ module.exports = function ( grunt ) {
    * minifying your code.
    */
   grunt.registerTask( 'compile', [
-    'less:compile', 'copy:compile_assets', 'useminPrepare', 'ngmin', 'concat', 'uglify', 'cssmin', 'rev', 'usemin'
+    'less:compile', 'useminPrepare', 'ngmin', 'concat', 'uglify', 'cssmin', 'rev', 'usemin', 'copy:compile_assets', 'copy:compile_index'
   ]);
 
 
